@@ -50,8 +50,8 @@ Bundle-Developers:\
 ## To enable baselining, uncomment the following lines:
 # -baseline: *
 
--buildrepo: Build
--releaserepo: StrangeSkies
+-buildrepo: Maven Local
+-releaserepo: Strange Skies
 
 -pom: true,\
 		version = ${versionmask;===;${@version}}-SNAPSHOT
