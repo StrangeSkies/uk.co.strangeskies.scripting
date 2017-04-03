@@ -51,7 +51,7 @@ Bundle-Developers:\
 # -baseline: *
 
 -buildrepo: Maven Local
--releaserepo: Strange Skies
+-releaserepo: JFrog OSS
 
 -pom: true,\
 		version = ${versionmask;===;${@version}}-SNAPSHOT
