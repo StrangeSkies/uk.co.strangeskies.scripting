@@ -30,4 +30,4 @@ after_success:
 
 cache:
   directories:
-    - "./cnf/cache"
+    - ./cnf/cache
