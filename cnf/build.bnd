@@ -80,8 +80,8 @@ Bundle-Developers:\
 			name				=	"Strange Skies";\
 			pom					=	${build}/strangeskies.xml;\
 			location			=	${build}/cache/strangeskies.xml;\
-			releaseUrls			=	http://oss.jfrog.org/artifactory/libs-release;\
-			snapshotUrls		=	http://oss.jfrog.org/artifactory/libs-snapshot
+			releaseUrls			=	http://oss.jfrog.org/libs-release;\
+			snapshotUrls		=	http://oss.jfrog.org/libs-snapshot
 
 -plugin.Central.Extras:\
 \
