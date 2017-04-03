@@ -1,6 +1,7 @@
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
+
 sudo: false
 addons:
   apt:
@@ -15,18 +16,18 @@ env:
   - secure: LO/UxVtRjhwrc/+eFKGRvgElib5aNe80vbRYdx40Mw91paE6NHdm48c1b0FDQxXZGRj2z0FoLYLPcjPDAHk9P+zp2I5Eia13J1CdPa/MrRGc9+Gar5aFujn6tNHGxwvB4iITTRwFsfc53FPh0v+AXiAD7bwICbcoudp2cHF+/7ltvpWTpmtY2dlEXcYLgVQuHdR9dPJDPTXUfeO4hdVWxjPJX/uu9uqMgc3hc7Iar7JQbEhV1HWLX2GowBtRg7ED/M0Hj5bRiC5yu3IMbxfqvlLlJ1wa5LTH501aWe/Ks2A3hViqK4ua0yggJsCkRwWYlGJ9XSlesIvwoMnCERVDemWsIoEjsTJWFPq6exD/HoTswVW9b2ainaZJfragcTW8JfJIXvrk5DeobVugQxjq2Btn03QS+z/IJ5zz7NtbFPY0k87kd90CuKnCrGejeLYKxis8XpKuLUlpLcgHSBgq3a90KIssfMdp+M0IzsnTqRJCiC4r1qe54qfOK8qZegQT1HX14vjDCtjBrZyJTccBsbXGHOxISReMFChvb2dPoXGt+8JELnRbrKWB4xZyw2rM+vMRN5+fCnDXPiHpoOHDGXjmTnK3yTstBbm3MfuugYuhCmrQDL0mAnKxtSd9TPt/XX5vI/y8KFeRj/yGgWHcHN4bE6rEvWJffNSW3ht5GTI=
 
 install:
-- ./gradlew --version
+  - ./gradlew --version
 
 before_script:
-- mv .travis/maven-settings.xml ~/.m2/settings.xml
+  - mv .travis/maven-settings.xml ~/.m2/settings.xml
 
 script:
-- ./gradlew build jacocoTestReport --stacktrace --continue
+  - ./gradlew build jacocoTestReport --stacktrace --continue
 
 after_success:
-- ./gradlew release --stacktrace
-- bash <(curl -s https://codecov.io/bash)
+  - ./gradlew release --stacktrace
+  - bash <(curl -s https://codecov.io/bash)
 
 cache:
   directories:
-  - "./cnf/cache"
+    - "./cnf/cache"
