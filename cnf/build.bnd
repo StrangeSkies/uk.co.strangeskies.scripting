@@ -15,11 +15,13 @@ Git-SHA:			${system-allow-fail;git rev-list -1 HEAD}
 -sources: true
 
 -include: ${workspace}/copyright.properties
-copyright.work.name = ${project.name}
-copyright.year = ${tstamp;yyyy}
-copyright = Copyright (c) ${copyright.holder.name} (2014, ${copyright.year}). All Rights Reserved.
+copyright.work.name		=	${project.name}
+copyright.year			=	${tstamp;yyyy}
+copyright				=	Copyright (c) ${copyright.holder.name} (2014, ${copyright.year}). All Rights Reserved.
 
-groupid: uk.co.strangeskies
+# Maven info. The maven artifactId defaults to Bundle-SymbolicName
+-groupid:	uk.co.strangeskies
+-pom:		version=${versionmask;===s;${@version}}-SNAPSHOT
 
 strangeskies-scripting-version: 0.0.0
 strangeskies-scripting-version-ceiling: 1.0.0
@@ -52,9 +54,6 @@ Bundle-Developers:\
 
 -buildrepo: Maven Local
 -releaserepo: JFrog OSS
-
--pom: true,\
-		version = ${versionmask;===;${@version}}-SNAPSHOT
 
 -plugin.Local:\
 \
