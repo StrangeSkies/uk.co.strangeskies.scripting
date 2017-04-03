@@ -24,6 +24,7 @@ script:
 - ./gradlew build jacocoTestReport --stacktrace --continue
 
 after_success:
+- ./gradlew release --stacktrace
 - bash <(curl -s https://codecov.io/bash)
 
 cache:
