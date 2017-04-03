@@ -20,7 +20,6 @@ install:
 
 before_script:
   - mv .travis/maven-settings.xml ~/.m2/settings.xml
-  - echo $JFROG_USER
 
 script:
   - ./gradlew build jacocoTestReport --stacktrace --continue
