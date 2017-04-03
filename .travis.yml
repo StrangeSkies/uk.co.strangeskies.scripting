@@ -1,34 +1,32 @@
 language: java
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 sudo: false
 addons:
   apt:
     packages:
-      - oracle-java8-installer
+    - oracle-java8-installer
 
 env:
   matrix:
   - TERM=dumb
   global:
-  - secure: Irtg0m2UESxQ6ay6gDryh4JM1c5Z9OT882V3iaLAbRmecfOlcVFPlgjmQGnqBWlCNesj5bp30zQJhBuS38k6cDRXd7Y0HPFCqt8IFrKrIhV6JNCQSDST7dU2kHtX+CnhgShyFLHV3CrOdaY/5rcvMU7XGN3ytX024+147x0BvFw=
-  - secure: NGNsvBLaE0R40chmarx1ryDqoHv1wiycw96EvOUrFafQpjUDeEw5q0W2572IIzY5NmyUw57WQx0tETyniJaJB7d5t//skUNAa1wIDms7RwqsQUllZaPlZPJak7JXV6UnSfGqISXaaGd6OxxQFMioFl/bhOyivtL3n98Osyqm6pQ=
-  - secure: DkJhDrFVkgQi33cRBuBS5LHpzEEMqAPVm4HiE6jQ2Ts1nFZHvkVsrrPIOgqNEXtiAak1zEy34tBB3nddq7YyJALHO/bbT7E9pIBi3A7A18UchQzl/60lhJ/NKD9+wh2UKHgZFvHyiLPXLBFI9WHp+xPEm4kIVlqmiRqYXFKbtJk=
+  - secure: Ja4Uf6XIiVYG0QJhgGBRK6t0sj6L8oEe0sbmSVZx4lYYoz/XvuUBijnIlBw1LVaVl6ckz6pnVb4zRx8ySBq2SZ8CgNmKI4GXJ12v+jqsKz0oGKkIBGzxF+hERvM09uZ6pXNDsBtNRXMBxTkgC/O+hR1x1fif5GAg3W2q8HwcjeISOszNuUEbu2Uxz9qiJ7uuqiexIJo6WKZ0bO+MFhx9ptVRWGWG8OcMD7NHH/l0bnkq4syEjuwxNrD0clhDsbWcTY72tgjX9EukqaYmAOzG58nThkQRH5us0E764KqpWI/7bydLgSQZdawWF2ZRSqeQYrib6ak2DN8GsFcR2qu0oQ2Hs/H+GgBYP+bYeCwXiZkdICfi+ufe1cysrvidky4PolEVG07sPw8DwiPNH9KTv6mJgQ6UJq2ufR0LGd3lVkD6OE0MrJNhG6RU+9E4paJM8hf3AfGZDz9qi4V44ZjAV74LRt0Zls7rb7acocTae7lWZoi3TagPTcBrbPX3R/JeuIe1uh9kHtaoKByl8/892Pss+ec8pU80MSJKgvuHX3g/o3Qdnbt8HCmSeB3FPWfOckt5oK9971eybwFnqREC2fyNdceZeggCBD7cGnTvueiOj6LnaPZcJX+V1xNEGK5n6kBonXrEAgVWfto+jQH71EbjTay/f5fCRu72JDEZvI0=
+  - secure: O/MsTG0/i82TV8HjbsJ3GUMX+3pgWXPzrzDjqd80U8vCpRyq9J8zgcbyLGjgLFFeC31XgykTZ3e7NzgPmhguFG1UsLogeVUNzkNxrtQvbkXxx+npTB/9MeSo/vuDbi1nPneSMfMQX1hxoKgZKfCyffPHsJ3XXI3iOaTQHnk6TQNyB2Bb/wukxB9ksdAgscwKAtGkoCjw7gNSS7oBzQRI6TLVS3fXOqDR9ztraJlVgMi960vXmf0Fw42y72Ep4MpYu6hrLoF15sbLawOAF6j8xTj8DBzhK0QS1wz/KUgluGgVqReOSLZULuutRPQ0vYkXTtVDlUdGXBwnvoWmbvR/FTQm8tgzam60Xr9F2jxr8/NmRwCuSXh0x7ADOhLv1Dm8xjDAf3qYo8Tz63hfCjFfgQF0EZMS6/zxHoNmOllT6smzu09uDQZm/DDVACJY8/UavA08USRKS+5sv52/LVMP6HxWQs6aGQEBEyotW/YBXVjLyAXzuwn6CMBCD9GWyBkPTlS4kJSZNRhbVJbsQTLeX7wZkzjucIENAZjP4TwuRvsMDmX0aqCwbIJtfCkMbFDTQpagZ+SLFEATwBubDbpFQ+Y+u4PVfA72ma2URZZ9UhkNuPLLjQ/A2lGNi/XWQEV52nSwpeIiXe63PpMiXnEWX3xDH6CUFtcLVpL6XymLu/M=
 
 install:
-  - ./gradlew --version
+- ./gradlew --version
 
 before_script:
-  - mv .travis/maven-settings.xml ~/.m2/settings.xml
+- mv .travis/maven-settings.xml ~/.m2/settings.xml
 
 script:
-  - ./gradlew build jacocoTestReport --stacktrace --continue
+- ./gradlew build jacocoTestReport --stacktrace --continue
 
 after_success:
-  - ./gradlew release publishGhPages --stacktrace -PgithubUser="${GITHUB_TOKEN}" -PgithubPassword=""
-  - bash <(curl -s https://codecov.io/bash)
+- ./gradlew release publishGhPages --stacktrace -PgithubUser="${GITHUB_TOKEN}" -PgithubPassword=""
+- bash <(curl -s https://codecov.io/bash)
 
 cache:
   directories:
-    - ./cnf/cache
+  - ./cnf/cache

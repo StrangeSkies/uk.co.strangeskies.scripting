@@ -20,10 +20,6 @@ buildscript {
     classpath bndPlugin
     classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
     classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.13.1"
-    classpath ("org.ajoberstar:gradle-git:1.2.0") {
-      /* Resolve dependency conflict with bndtools: */
-      exclude group: "org.apache.httpcomponents"
-    }
     classpath 'org.jacoco:org.jacoco.agent:0.7.8'
   }
 }
@@ -61,17 +57,6 @@ configure(bndProjects()) {
 }
 
 /* Test Configuration */
-/*
-configure(bndProjects()) {
-  test {
-    // set heap size for the test JVM(s)
-    minHeapSize = "4096m"
-    maxHeapSize = "4096m"
-
-    jvmArgs '-Xms4096m -Xmx4096m'
-  }
-}*/
-
 configure(bndProjects()) {
   apply plugin: 'jacoco'
 
@@ -111,77 +96,5 @@ configure(bndProjects()) {
     mapping {
       java = "SLASHSTAR_STYLE"
     }
-  }
-}
-
-/* Javadoc Generation */
-def javadocOptions(options, title) {
-  configure(options) {
-    docTitle = title
-    windowTitle = title
-    memberLevel = JavadocMemberLevel.PROTECTED
-    charSet = "UTF-8"
-    encoding = "UTF-8"
-    docEncoding = "UTF-8"
-    links("http://docs.oracle.com/javase/8/docs/api/")
-  }
-}
-
-def javadocExports(project) {
-  def javadocSpecs = project.bnd("Export-Package", project.name)
-
-  return javadocSpecs.split(/\s*,\s*/).collect {
-    it.replace(".","/")+"/*.java"
-  }
-}
-
-configure(bndProjects()) {
-  def javadocTitle = bnd("javadoc.title", project.name)
-
-  javadoc {
-    javadocOptions(options, javadocTitle)
-
-    javadocExports(project).each { include it }
-
-    doFirst {
-      project.delete(destinationDir)
-      logger.info "Title    : ${options.windowTitle}"
-      logger.info "Destdir  : ${destinationDir}"
-    }
-  }
-}
-
-task aggregateJavadoc(type: Javadoc) {
-  javadocOptions(options, project.name)
-
-  bndProjects().each {
-    javadocExports(it).each { include it }
-  }
-
-  source bndProjects().collect { it.sourceSets.main.allJava }
-
-  destinationDir = new File(buildDir, "javadoc")
-
-  classpath = files(bndProjects().collect {project -> project.sourceSets.main.compileClasspath})
-
-  doFirst {
-    project.delete(destinationDir)
-    logger.info "Title    : ${options.windowTitle}"
-    logger.info "Destdir  : ${destinationDir}"
-  }
-}
-
-/* Javadoc Publish to GH Pages */
-apply plugin: "org.ajoberstar.github-pages"
-
-githubPages {
-  repoUri = "https://github.com/StrangeSkies/uk.co.strangeskies.git"
-  if (project.hasProperty("githubUser") && project.hasProperty("githubPassword")) {
-    credentials.setUsername githubUser
-    credentials.setPassword githubPassword
-  }
-
-  pages {
-    from aggregateJavadoc
   }
 }
