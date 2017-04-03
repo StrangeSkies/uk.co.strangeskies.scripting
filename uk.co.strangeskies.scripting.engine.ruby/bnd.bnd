@@ -1,0 +1,18 @@
+-include: ${workspace}/uk.co.strangeskies.scripting/engine.bnd
+language: Ruby
+
+-buildpath:\
+	org.jruby.jruby;version=latest,\
+	uk.co.strangeskies.scripting.api;version=snapshot
+
+-includeresource:\
+	@${repo;org.jruby.jruby;latest},\
+	res
+
+Import-Package:\
+	org.slf4j;resolution:=optional,\
+	org.apache.tools.ant;resolution:=optional,\
+	*
+
+Private-Package:\
+	uk.co.strangeskies.scripting.engine.ruby
