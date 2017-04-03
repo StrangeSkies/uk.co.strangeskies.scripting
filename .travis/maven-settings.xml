@@ -5,7 +5,7 @@
   <servers>
     <server>
       <id>http://oss.jfrog.org</id>
-      <username>test${env.JFROG_USER}</username>
+      <username>eliasvasylenko</username>
       <password>${env.JFROG_PASSWORD}</password>
     </server>
   </servers>
