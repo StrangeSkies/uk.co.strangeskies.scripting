@@ -45,7 +45,6 @@ import org.junit.Ignore;
 import uk.co.strangeskies.scripting.RequireLuaScriptEngine;
 import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 
-@Ignore
 @SuppressWarnings("javadoc")
 @RequireLuaScriptEngine
 public class LuaScriptEngineTest extends ScriptEngineTestBase {

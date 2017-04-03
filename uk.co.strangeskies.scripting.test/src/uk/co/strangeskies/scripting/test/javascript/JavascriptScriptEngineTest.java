@@ -45,7 +45,6 @@ import org.junit.Ignore;
 import uk.co.strangeskies.scripting.RequireJavascriptScriptEngine;
 import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 
-@Ignore
 @SuppressWarnings("javadoc")
 @RequireJavascriptScriptEngine
 public class JavascriptScriptEngineTest extends ScriptEngineTestBase {

@@ -48,7 +48,6 @@ import org.junit.Ignore;
 import uk.co.strangeskies.scripting.RequireRubyScriptEngine;
 import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 
-@Ignore
 @SuppressWarnings("javadoc")
 @RequireRubyScriptEngine
 public class RubyScriptEngineTest extends ScriptEngineTestBase {

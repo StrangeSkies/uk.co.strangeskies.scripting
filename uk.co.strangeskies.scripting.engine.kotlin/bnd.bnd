@@ -21,6 +21,7 @@ language: Kotlin
 	res
 
 Import-Package:\
+	uk.co.strangeskies.scripting,\
 	*;resolution:=optional
 
 Private-Package:\

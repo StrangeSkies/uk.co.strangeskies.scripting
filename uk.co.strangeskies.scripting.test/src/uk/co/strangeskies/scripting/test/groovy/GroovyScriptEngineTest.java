@@ -47,7 +47,6 @@ import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 
 @SuppressWarnings("javadoc")
 @RequireGroovyScriptEngine
-@Ignore
 public class GroovyScriptEngineTest extends ScriptEngineTestBase {
 	public GroovyScriptEngineTest() {
 		super("groovy");

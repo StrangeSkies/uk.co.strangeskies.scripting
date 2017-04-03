@@ -45,7 +45,6 @@ import org.junit.Ignore;
 import uk.co.strangeskies.scripting.RequireKotlinScriptEngine;
 import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 
-@Ignore
 @SuppressWarnings("javadoc")
 @RequireKotlinScriptEngine
 public class KotlinScriptEngineTest extends ScriptEngineTestBase {

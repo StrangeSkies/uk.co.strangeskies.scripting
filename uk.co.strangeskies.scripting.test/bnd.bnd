@@ -63,7 +63,9 @@ Private-Package:\
 	uk.co.strangeskies.scripting.engine.groovy;version=snapshot,\
 	uk.co.strangeskies.reflection.resource;version='[1.0.13,1.0.14)',\
 	uk.co.strangeskies.text;version='[1.0.13,1.0.14)',\
-	uk.co.strangeskies.utilities;version='[1.0.13,1.0.14)'
+	uk.co.strangeskies.utilities;version='[1.0.13,1.0.14)',\
+	uk.co.strangeskies.scripting.engine.frege;version=snapshot,\
+	uk.co.strangeskies.scripting.api;version=snapshot
 
 -runfw: org.eclipse.osgi;version='[3.10.100.v20150529-1857,3.10.100.v20150529-1857]'
 -runee: JavaSE-1.8

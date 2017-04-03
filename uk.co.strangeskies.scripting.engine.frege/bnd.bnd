@@ -28,11 +28,7 @@ Import-Package:\
 	javax.script,\
 	javax.swing,\
 	javax.swing.text,\
-	javax.tools,\
-	org.osgi.framework;version="[1.8,2)",\
-	org.osgi.framework.wiring;version="[1.2,2)",\
-	uk.co.strangeskies.scripting;version="[1.0,2)",\
-	uk.co.strangeskies.utilities.classloading;version="[1.0,2)"
+	javax.tools
 
 Bundle-ClassPath: frege.compiler.grammar
 

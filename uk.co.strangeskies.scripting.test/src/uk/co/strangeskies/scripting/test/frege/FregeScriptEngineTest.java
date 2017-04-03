@@ -44,11 +44,12 @@ import javax.script.ScriptException;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import uk.co.strangeskies.scripting.RequireFregeScriptEngine;
 import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 
-@SuppressWarnings("javadoc")
-//@RequireFregeScriptEngine
 @Ignore
+@SuppressWarnings("javadoc")
+@RequireFregeScriptEngine
 public class FregeScriptEngineTest extends ScriptEngineTestBase {
 	public FregeScriptEngineTest() {
 		super("frege");

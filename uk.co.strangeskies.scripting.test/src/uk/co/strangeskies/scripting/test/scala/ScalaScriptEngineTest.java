@@ -45,9 +45,9 @@ import org.junit.Ignore;
 import uk.co.strangeskies.scripting.RequireScalaScriptEngine;
 import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 
+@Ignore
 @SuppressWarnings("javadoc")
 @RequireScalaScriptEngine
-@Ignore
 public class ScalaScriptEngineTest extends ScriptEngineTestBase {
 	public ScalaScriptEngineTest() {
 		super("scala");
