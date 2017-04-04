@@ -18,9 +18,7 @@ buildscript {
   }
   dependencies {
     classpath bndPlugin
-    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:3.1.1"
     classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.13.1"
-    classpath 'org.jacoco:org.jacoco.agent:0.7.8'
   }
 }
 
