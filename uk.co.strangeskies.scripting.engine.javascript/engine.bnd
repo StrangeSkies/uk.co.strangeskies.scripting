@@ -1,0 +1,11 @@
+-include: ${workspace}/uk.co.strangeskies.scripting/engine.bnd
+language: Javascript
+
+Bundle-SymbolicName: ${p}
+
+-includeresource:\
+	res
+
+Import-Package:\
+	jdk.nashorn.api.scripting,\
+	*

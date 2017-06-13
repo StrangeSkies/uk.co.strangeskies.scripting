@@ -5,8 +5,7 @@ language: Frege
 	org.frege-lang:frege:jar:jdk7,\
 	org.frege-lang:frege-interpreter-core,\
 	org.frege-lang:frege-interpreter-java-support,\
-	uk.co.strangeskies.scripting.api;version=latest,\
-	uk.co.strangeskies.utilities;version=latest
+	uk.co.strangeskies.scripting.api;version=latest
 
 -includeresource:\
 	res
@@ -29,8 +28,6 @@ Import-Package:\
 	javax.swing,\
 	javax.swing.text,\
 	javax.tools
-
-Bundle-ClassPath: frege.compiler.grammar
 
 Private-Package:\
 	frege.compiler.grammar,\

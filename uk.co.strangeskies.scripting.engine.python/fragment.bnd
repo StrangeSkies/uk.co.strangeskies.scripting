@@ -1,0 +1,7 @@
+Fragment-Host: system.bundle;extension:=framework
+
+Export-Package:\
+	sun.io,\
+	sun.misc,\
+	sun.security.util,\
+	sun.security.x509

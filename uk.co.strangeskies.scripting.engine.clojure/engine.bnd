@@ -1,0 +1,14 @@
+-include: ${workspace}/uk.co.strangeskies.scripting/engine.bnd
+language: Clojure
+
+Bundle-SymbolicName: ${p}
+
+-includeresource:\
+	res
+
+Import-Package:\
+	*
+
+Private-Package: \
+	uk.co.strangeskies.scripting.engine.clojure,\
+	clojure.*

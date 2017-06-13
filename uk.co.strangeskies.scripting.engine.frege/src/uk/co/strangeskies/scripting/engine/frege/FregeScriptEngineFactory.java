@@ -32,6 +32,8 @@
  */
 package uk.co.strangeskies.scripting.engine.frege;
 
+import java.util.List;
+
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptException;
@@ -40,7 +42,15 @@ import frege.scriptengine.FregeScriptEngine.JFregeScriptEngine;
 import uk.co.strangeskies.scripting.InvocableBase;
 
 @SuppressWarnings("javadoc")
-public class FregeScriptEngineFactory extends frege.scriptengine.FregeScriptEngine.FregeScriptEngineFactory {
+public class FregeScriptEngineFactory implements ScriptEngineFactory {
+	private static final class FregeScriptEngineFactoryImpl
+			extends frege.scriptengine.FregeScriptEngine.FregeScriptEngineFactory {
+		@Override
+		public ScriptEngine getScriptEngine() {
+			return new InvocableFregeScriptEngine(this);
+		}
+	}
+
 	private static final class InvocableFregeScriptEngine extends JFregeScriptEngine implements InvocableBase {
 		public InvocableFregeScriptEngine(ScriptEngineFactory factory) {
 			super(factory);
@@ -65,8 +75,65 @@ public class FregeScriptEngineFactory extends frege.scriptengine.FregeScriptEngi
 		}
 	}
 
+	private final ScriptEngineFactory component = new FregeScriptEngineFactoryImpl();
+
 	@Override
 	public ScriptEngine getScriptEngine() {
-		return new InvocableFregeScriptEngine(this);
+		return component.getScriptEngine();
+	}
+
+	@Override
+	public String getEngineName() {
+		return component.getEngineName();
+	}
+
+	@Override
+	public String getEngineVersion() {
+		return component.getEngineVersion();
+	}
+
+	@Override
+	public List<String> getExtensions() {
+		return component.getExtensions();
+	}
+
+	@Override
+	public List<String> getMimeTypes() {
+		return component.getMimeTypes();
+	}
+
+	@Override
+	public List<String> getNames() {
+		return component.getNames();
+	}
+
+	@Override
+	public String getLanguageName() {
+		return component.getLanguageName();
+	}
+
+	@Override
+	public String getLanguageVersion() {
+		return component.getLanguageVersion();
+	}
+
+	@Override
+	public Object getParameter(String key) {
+		return component.getParameter(key);
+	}
+
+	@Override
+	public String getMethodCallSyntax(String obj, String m, String... args) {
+		return component.getMethodCallSyntax(obj, m, args);
+	}
+
+	@Override
+	public String getOutputStatement(String toDisplay) {
+		return component.getOutputStatement(toDisplay);
+	}
+
+	@Override
+	public String getProgram(String... statements) {
+		return component.getProgram(statements);
 	}
 }
