@@ -1,0 +1,6 @@
+Fragment-Host: system.bundle;extension:=framework
+
+Export-Package:\
+	sun.management,\
+	sun.misc,\
+	sun.nio.cs	

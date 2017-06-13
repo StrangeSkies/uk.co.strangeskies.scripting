@@ -43,8 +43,6 @@ import javax.script.ScriptException;
 import javax.script.SimpleBindings;
 import javax.script.SimpleScriptContext;
 
-import org.junit.Ignore;
-
 import uk.co.strangeskies.scripting.RequireRubyScriptEngine;
 import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 

@@ -40,7 +40,6 @@ import java.net.URISyntaxException;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import uk.co.strangeskies.scripting.RequirePythonScriptEngine;

@@ -40,8 +40,6 @@ import java.net.URISyntaxException;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
-import org.junit.Ignore;
-
 import uk.co.strangeskies.scripting.RequireClojureScriptEngine;
 import uk.co.strangeskies.scripting.test.ScriptEngineTestBase;
 

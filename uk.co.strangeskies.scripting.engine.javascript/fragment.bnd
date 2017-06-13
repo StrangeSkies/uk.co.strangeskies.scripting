@@ -1,0 +1,4 @@
+Fragment-Host: system.bundle;extension:=framework
+
+Export-Package:\
+	jdk.nashorn.api.scripting
